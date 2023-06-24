@@ -10,9 +10,24 @@
     */
 
     // Entrada
-    
-    // Processamento
+    const temp = Number(prompt("Insira uma temperatura em graus celsius:").trim().replace(",", "."));
 
+    // Processamento
+    if (temp < "100") {
+        alert(`A temperatura está muito baixa!`);
+    }
+    else if (temp >= "100" && temp <= "200") {
+        alert(`Está baixa!`);
+    }
+    else if (temp > "200" && temp < "500") {
+        alert(`A temperatura está normal!`);
+    }
+    else if (temp >= "500") {
+        alert(`A temperatura está muito alta!`);
+    }
+    else {
+        alert(`Dados inválidos.`);
+    }
     // Saída
 
 </script>
