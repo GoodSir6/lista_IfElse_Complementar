@@ -10,9 +10,20 @@
     */
 
     // Entrada
-    
+    const valor = Number(prompt("Insira o valor de um imóvel:").trim().replace(",", "."));
+    const anos = Number(prompt("Insira em quantos anos será realizado o financiamento:").trim().replace(",", "."));
+    const salario = Number(prompt("Insira o salário do comprador:").trim().replace(",", "."));
+
     // Processamento
-
-    // Saída
-
+    const parcela = valor / (anos * 12);
+    const salTri = salario * 0.3;
+    if (isNaN(valor) || isNaN(anos) || isNaN(salario)) {
+        alert(`Por favor, insira apenas números.`);
+    }
+    else if (salTri < parcela) {
+        alert(`O comprador não pode financiar o imóvel. Valor parcela: R$${parcela.toFixed(2).replace(".", ",")}`);
+    }
+    else {
+        alert(`O comprador pode financiar o imóvel! Valor parcela: R$${parcela.toFixed(2).replace(".", ",")}`);
+    }
 </script>

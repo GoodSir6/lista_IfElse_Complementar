@@ -12,9 +12,29 @@
     */
 
     // Entrada
-    
-    // Processamento
+    const viagemSp = Number(prompt("Qual o custo de viagem para São Paulo?").trim().replace(",","."));
+    const viagemRj = Number(prompt("Qual o custo de viagem para Rio de Janeiro?").trim().replace(",","."));
+    const hotelSp = Number(prompt("Qual o preço da diária do hotel em São Paulo?").trim().replace(",","."))
+    const hotelRj = Number(prompt("Qual o preço da diária do hotel em Rio de Janeiro?").trim().replace(",","."))
+    const diasV = Number(prompt("Quantos dias pretende ficar no destino?").trim().replace(",","."))
 
-    // Saída
+    // Processamento
+    const precoSp = hotelSp * diasV + viagemSp;
+    const precoRj = hotelRj * diasV + viagemRj;
+if (isNaN(viagemSp) || isNaN(viagemRj) || isNaN(hotelSp) || isNaN(hotelRj) || isNaN(diasV)) {
+    alert(`Por gentileza, digite apenas números.`);
+}
+else if (precoSp > precoRj) {
+    alert(`A viagem para RJ sairá mais barata, RJ: R$ ${precoRj.toFixed(2).replace(".",",")}. SP: R$ ${precoSp.toFixed(2).replace(".",",")}.`);
+}
+else if (precoSp < precoRj) {
+    alert(`A viagem para SP sairá mais barata, RJ: R$ ${precoRj.toFixed(2).replace(".",",")}. SP: R$ ${precoSp.toFixed(2).replace(".",",")}.`);
+}
+else if (precoSp == precoRj) {
+    alert(`As duas viagens terão o mesmo preço! RJ: R$ ${precoRj.toFixed(2).replace(".",",")}. SP: R$ ${precoSp.toFixed(2).replace(".",",")}.`);
+}
+else {
+    alert(`a`)
+}
 
 </script>

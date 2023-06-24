@@ -11,9 +11,25 @@
     */
 
     // Entrada
-    
-    // Processamento
+    const dist = Number(prompt("Insira a distância da viagem: (em quilômetros)").trim().replace(",", "."));
+    const kmporD = Number(prompt("Insira quantos quilômetros você pretende viajar por dia:").trim().replace(",", "."));
 
-    // Saída
+    // Processamento
+    const dias = dist / kmporD;
+    if (isNaN(dist) || isNaN(kmporD)) {
+        alert(`Por gentileza, insira apenas números.`);
+    }
+    else if (dias <= 3) {
+        alert(`A viagem poderá ser realizada em qualquer período. Dias de duração da viagem: ${dias.toFixed(1).replace(".", ",")}`);
+    }
+    else if (dias <= 10 && dias > 3) {
+        alert(`A viagem poderá ser realizada nas férias de julho. Dias de duração da viagem: ${dias.toFixed(1).replace(".", ",")}`);
+    }
+    else if (dias <= 20 && dias > 10) {
+        alert(`A viagem poderá ser realizada nas férias de verão. Dias de duração da viagem: ${dias.toFixed(1).replace(".", ",")}`);
+    }
+    else {
+        alert(`O usuário deverá trabalhar remoto. Dias de duração da viagem: ${dias.toFixed(1).replace(".", ",")}`);
+    }
 
 </script>

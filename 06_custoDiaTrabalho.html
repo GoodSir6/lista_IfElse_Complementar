@@ -15,9 +15,36 @@
     */
 
     // Entrada
-    
+    const viagensD = Number(prompt("Insira quantas viagens são realizadas por dia:").trim().replace(",", "."));
+    const cargo = prompt("Insira o cargo que ocupa: (Motorista ou Cobrador)").trim().toLowerCase();
+
     // Processamento
-
-    // Saída
-
+    let adicional1 = 100 * 0.2 + 100;
+    let adicional2 = 100 * 0.35 + 100;
+    let adicional3 = 100 * 0.1 + 100;
+    if (cargo == "motorista") {
+        if (isNaN(viagensD)) {
+            alert(`Por gentileza, insira apenas números nas viagens realizadas por dia.`);
+        }
+        else if (viagensD <= 10) {
+            document.write(`Cargo do usuário: ${cargo}. Valor final recebido pelas viagens realizadas: R$ 120,00`);
+        }
+        else {
+            document.write(`Cargo do usuário: ${cargo}. Valor final recebido pelas viagens realizadas: R$ 135,00.`);
+        }
+    }
+    else if (cargo == "cobrador") {
+        if (isNaN(viagensD)) {
+            alert(`Por gentileza, insira apenas números nas viagens realizadas por dia.`);
+        }
+        else if (viagensD <= 10) {
+            document.write(`Cargo do usuário: ${cargo}. Valor final recebido pelas viagens realizadas: R$ 100,00. (Não obteve adicional)`);
+        }
+        else {
+            document.write(`Cargo do usuário: ${cargo}. Valor final recebido pelas viagens realizadas: R$ 110,00.`);
+        }
+    }
+    else {
+        alert(`Por gentileza, insira "cobrador" ou "motorista".`)
+    }
 </script>

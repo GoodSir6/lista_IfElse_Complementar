@@ -15,7 +15,7 @@
     */
 
     // Entrada
-    const salario = Number(prompt("Insira o valor do seu salário:").trim().replace(",","."));
+    const salario = Number(prompt("Insira o valor do seu salário:").trim().replace(",", "."));
 
     // Processamento
     if (isNaN(salario)) {
@@ -23,19 +23,19 @@
     }
     else if (salario <= 2000) {
         const salarioR = salario * 0.15 + salario;
-        alert(`O salário com o reajuste é de: R$${salarioR.toFixed(2).replace(".",",")}`);
+        alert(`O salário com o reajuste é de: R$${salarioR.toFixed(2).replace(".", ",")}`);
     }
     else if (salario > 2000 && salario <= 4000) {
         const salarioR = salario * 0.10 + salario;
-        alert(`O salário com o reajuste é de: R$${salarioR.toFixed(2).replace(".",",")}`);
+        alert(`O salário com o reajuste é de: R$${salarioR.toFixed(2).replace(".", ",")}`);
     }
     else if (salario > 4000 && salario <= 7000) {
         const salarioR = salario * 0.75 + salario;
-        alert(`O salário com o reajuste é de: R$${salarioR.toFixed(2).replace(".",",")}`);
+        alert(`O salário com o reajuste é de: R$${salarioR.toFixed(2).replace(".", ",")}`);
     }
     else {
         const salarioR = salario * 0.5 + salario;
-        alert(`O salário com o reajuste é de: R$${salarioR.toFixed(2).replace(".",",")}`);
+        alert(`O salário com o reajuste é de: R$${salarioR.toFixed(2).replace(".", ",")}`);
     }
 
 </script>

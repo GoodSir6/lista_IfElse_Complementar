@@ -12,9 +12,27 @@
     */
 
     // Entrada
-    
-    // Processamento
+    const valorPc = Number(prompt("Insira o valor do computador:").trim().replace(",", "."));
+    const formaPag = prompt("Insira a forma de pagamento: (boleto, dinheiro ou pix)").trim().toLowerCase();
 
-    // Saída
+    // Processamento
+    if (isNaN(valorPc)) {
+        alert(`Por gentileza, insira o valor do computador em "dinheiros".`);
+    }
+    else if (formaPag == "boleto" || formaPag == "b") {
+        const valorF = valorPc * 0.97;
+        alert(`O valor final do computador pago em boleto, ficou no valor de R$${valorF.toFixed(2).replace(".", ",")}`);
+    }
+    else if (formaPag == "dinheiro" || formaPag == "d") {
+        const valorF = valorPc * 0.95;
+        alert(`O valor final do computador pago em dinheiro, ficou no valor de R$${valorF.toFixed(2).replace(".", ",")}`);
+    }
+    else if (formaPag == "pix" || formaPag == "p") {
+        const valorF = valorPc * 0.90;
+        alert(`O valor final do computador pago no pix, ficou no valor de R$${valorF.toFixed(2).replace(".", ",")}`);
+    }
+    else {
+        alert(`Forma de pagamento não válida. (Insira pix, boleto ou dinheiro)`);
+    }
 
 </script>

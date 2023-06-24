@@ -19,9 +19,29 @@
     */
 
     // Entrada
-    
-    // Processamento
+    const anosCarreira = Number(prompt("Quantos anos de carreira o professor possui?").trim().replace(",", "."));
+    const projEnsino = Number(prompt("Quantos projetos de ensino já coordenou?").trim().replace(",", "."));
+    const projExtensao = Number(prompt("Quantos projetos de extensão já orientou?").trim().replace(",", "."));
+    const TCCs = Number(prompt("Quantos TCCs já orientou?").trim().replace(",", "."));
 
-    // Saída
+    // Processamento
+    const anosC = anosCarreira * 2.5;
+    const projE = projEnsino * 5;
+    const projEx = projExtensao * 5;
+    const TCC = TCCs * 3;
+    const resultado = anosC + projE + projEx + TCC;
+    if (isNaN(anosCarreira) || isNaN(projEnsino) || isNaN(projExtensao) || isNaN(TCCs)) {
+        alert(`Por favor, digite apenas números!`);
+    }
+    else if (resultado <= 30) {
+        alert(`Convidado! Pontos: ${resultado.toFixed(0).replace(".", ",")}`);
+    }
+    else if (resultado <= 50 && resultado > 30) {
+        alert(`Agregado! Pontos: ${resultado.toFixed(0).replace(".", ",")}`);
+    }
+    else {
+        alert(`Titular! Pontos: ${resultado.toFixed(0).replace(".", ",")}`);
+    }
+
 
 </script>

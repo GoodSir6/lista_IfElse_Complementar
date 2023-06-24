@@ -12,9 +12,34 @@
     */
 
     // Entrada
-    
-    // Processamento
+    const salario = Number(prompt("Insira o quanto você recebe de salário por mês:").trim().replace(",", "."));
+    const auxilio = prompt("Você deseja receber auxílio transporte?").trim().toLowerCase();
+    const veic = prompt("Você utiliza veículo próprio?").trim().toLowerCase();
 
-    // Saída
+    // Processamento
+    if (isNaN(salario)) {
+        alert(`Digite o salário em números apenas.`);
+    }
+    else if (auxilio == "sim" || auxilio == "s") {
+
+        if (veic == "sim" || veic == "s") { // UTILIZA VEICULO PROPRIO
+            let salarioF = (salario * -0.06) + salario + 200
+            let desconto = salario * 0.06
+            alert(`O desconto foi de R$${desconto.toFixed(2).replace(".", ",")} e o salário final foi de: R$${salarioF.toFixed(2).replace(".", ",")}`);
+        }
+        else if (veic == "não" || veic == "nao" || veic == "n") { // UTILIZA TRANSPORTE PUBLICO
+            const salarioF = salario + 150
+            alert(`Não houve desconto, e o salário final foi de: R$${salarioF.toFixed(2).replace(".", ",")}`);
+        }
+        else {
+            alert(`Dados inválidos.`)
+        }
+    }
+    else if (auxilio == "não" || auxilio == "n" || auxilio == "nao") {
+        alert(`Sem desconto de salário. Salário final: R$${salario.toFixed(2).replace(".", ",")}.`);
+    }
+    else {
+        alert(`Dados inválidos.`)
+    }
 
 </script>
